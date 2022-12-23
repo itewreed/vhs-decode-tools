@@ -10,3 +10,7 @@ Input file expected for video *.r16 or *.r8 \
 Input file expected for HiFi *_hifi.r16 or *_hifi.r8
 
 Just run it with an input and output folder as parameter, optional parameters can be also specified. This script then collects all capture files and creates a bash script **cap2flac.sh** in the output folder, holding all commands ready for converting. Just run that new script and converting begins.
+
+# capture-2-decode.sh
+Takes a whole folder of capture files and decodes them using vhs-decode
+Input-, outputfolder have to be given. Also path and executable of vhs-decode.
