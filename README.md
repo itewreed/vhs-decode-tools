@@ -9,4 +9,4 @@ This script does bandwith limiting and flac encoding of 16 and 8-Bit RF Video an
 Input file expected for video *.r16 or *.r8 \
 Input file expected for HiFi *_hifi.r16 or *_hifi.r8
 
-Just run it with an input and output folder and optional aditional parameters specified. A bash script **cap2flac.sh** will be created in the output folder holding all commands ready for converting. Just run that new script and converting begins.
+Just run it with an input and output folder as parameter, optional parameters can be also specified. This script then collects all capture files and creates a bash script **cap2flac.sh** in the output folder, holding all commands ready for converting. Just run that new script and converting begins.
