@@ -14,11 +14,11 @@ A ffmpeg command is used in order to unweave and stack the fields on top of each
 
 ```ffmpeg -i input_video.mkv -filter_complex "[0]il=l=d:c=d,split[o][e];[o]crop=iw:ih/2:0:0[odd];[e]crop=iw:ih/2:0:ih/2[even];[odd][even]vstack" -c:v ffv1 -coder 1 -context 1 -g 25 -level 3 -slices 16 -slicecrc 1 -top 1 output_stacked.mkv```
 ### AI magic
-There are two so called Compact models available, 1x_vhs-restore_secam_compact_80k.pth and 1x_vhs-restore_pal_compact_80k.pth (pal not done yet). These can be loaded into a software called chaiNNer https://github.com/chaiNNer-org/chaiNNer . Using an iterator node it can iterate through image sequences or through a video. The Compact models are pretty fast. On a RTX3060 5fps can be achieved.
+There are two so called Compact models available, 1x_vhs-restore_secam_compact_80k.pth and 1x_vhs-restore_pal_compact_80k.pth. These can be loaded into a software called chaiNNer https://github.com/chaiNNer-org/chaiNNer . Using an iterator node it can iterate through image sequences or through a video. The Compact models are pretty fast. On a RTX3060 5fps can be achieved.
 The output is either saved as an image sequence or as video.
 
 ### Preprocessing
-This can be fed into the stackedfields-2-deinterlace-and-tweak.avs script which reinterlaces,tweaks, deinterlaces, crops and resize the content.
+This can be fed into the stackedfields-2-deinterlace-and-tweak.avs script which reinterlaces,tweaks, deinterlaces, crops and resizes the content.
 
 ### Further do, faces
 After theses steps an optional face restore can be applied, again by using the chaiNNer tool. It has an option for face restore, which works pretty decent already. The necessary GFPGAN model is linked on the chaiNNer github page
