@@ -1,0 +1,54 @@
+{
+    "softwarePresets": [
+        {
+            "vhsDecodeSoftware"  : "vhs-decode",
+            "audioAlignSoftware" : "/home/user/winapps/vhs-decode-auto-audio-align_1.0.0/VhsDecodeAutoAudioAlign.exe",
+            "audioAlignSoftwareParameters": [false, "stream-align"],
+            "teleTextSoftware"   : "teletext",
+            "soxSoftware"        : "sox"
+        }
+    ],
+    "directoryPresets": [
+        {
+            "rfCaptureVideo": "/home/user/rfcaptures/",
+            "captureAudio": "/home/user/rfcaptures/audio/",
+            "rfCaptureHifi" : "/home/user/rfcaptures/hifi/",
+            "decodeOutDir"  : "/home/user/tbc/",
+            "suffixRfCaptureVideo" : "flac",
+            "suffixCaptureAudio" : "wav",
+            "suffxRfCaptureHifi" : "flac",
+            "jsonBackupDir" : "/home/user/tbc/json/"
+        }
+    ],
+    "decodeParams" : "--frequency 40.000000 --ct --threads 1 --ire0_adjust",
+    "hifiDecodeParams" : "--threads 8 --pal --demod hilbert --frequency 10MHz --muting on",
+    "colorSystem"  : "PAL",
+    "teletextDecoding": [
+        {
+            "decodeTeletext": false,
+            "decodePattern" : "vhs"
+        }
+    ],
+    "audioAligning": [
+        {
+            "audioAlign"           : true,
+            "audioBitrates"        : "24",
+            "audioSamplerates"     : "46875",
+            "audioChannels"        : "3"
+        },
+        {
+            "audioAlign"           : true,
+            "audioBitrates"        : "32",
+            "audioSamplerates"     : "48000",
+            "audioChannels"        : "2"
+        }
+    ],
+    "filePattern": [
+        {
+            "rfCaptureVideo": "-rf-video-40msps",
+            "rfCaptureHifi" : "-rf-audio-10msps",
+            "linearCaptureAudio": "-linear-audio-46875sps-3ch-24bit-le"
+
+        }
+    ]
+}
